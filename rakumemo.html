@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./rakumemo.css">
+   <title>らくらく買い物メモ</title>
+</head>
+<body>
+   
+   <div class="smartphone-size">
+
+      <h1 class="header-text">らくらく買い物メモ</h1>
+      <table class="table" id="table" border="1">
+         <tr>
+            <th><p class="t-header">商品名</p></th>
+            <th><p class="t-header">値段</p></th>
+            <th><p class="t-header">数</p></th>
+            <th><p class="t-header">割引 %</p></th>
+            <th><p class="t-header">消</p></th>
+            <th><p class="t-header">税</p></th>
+         </tr>
+         <tr class="memo-inp" data-memoInp="memo-inp">
+            <td><input type="text" class="t-data mer" data-mer="mer"></td>
+            <td><input type="number" class="t-data price" data-price="price"></td>
+            <td><input type="number" class="t-data qua" data-qua="qua" value="1"></td>
+            <td><input type="number" class="t-data dis" data-dis="dis"></td>
+            <td><button class="t-data delete" data-delete="delete">-</button></td>
+            <td><select class="t-data cons" size="1" data-cons="cons">
+               <option value="eight">8%</option>
+               <option value="ten">10%</option>
+               <option value="not">なし</option>
+            </select></td>
+         </tr>
+      </table>
+      <div>
+         <button class="btn" data-addBtn="add-btn">メモ追加</button>
+         <button class="btn" data-calcBtn="calc-btn">計算</button>
+      </div>
+      <div>
+         <button class="btn" data-saveBtn="save-btn">保存</button>
+         <button class="btn" data-loadBtn="load-btn">ロード</button>
+      </div>
+
+      <div class="setting">
+         <label>削除通知<input type="checkbox" class="check" data-deleteCheck="delete-check"></label>
+      </div>
+
+      <h2 class="calc-result" data-calcResult="calc-result">0円</h2>
+
+   </div>
+
+   <script src="./rakumemo.js"></script>
+
+</body>
+</html>

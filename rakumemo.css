@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+}
+
+.smartphone-size {
+    width: 375px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.header-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+td {
+    text-align: center;
+}
+
+.t-header {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.t-data.mer {
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 130px;
+    border: 0;
+}
+
+.t-data.price {
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 40px;
+    border: 0;
+}
+
+.t-data.qua {
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 35px;
+    border: 0;
+}
+
+.t-data.dis {
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 35px;
+    border: 0;
+}
+
+.t-data.delete {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    background-color: #de6f6f;
+    border-radius: 100%;
+    border: 0;
+}
+
+.t-data.cons {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.btn {
+    font-family: 'Noto Sans JP', sans-serif;
+    border: 0;
+    border: #5856d0 dashed 2px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.calc-result {
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
+    margin: 0;
+    margin-top: 30px;
+}
