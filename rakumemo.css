@@ -17,6 +17,14 @@ body {
     margin-top: 30px;
 }
 
+.comment {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
 .table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -36,26 +44,30 @@ td {
 
 .t-data.mer {
     font-family: 'Noto Sans JP', sans-serif;
-    width: 130px;
+    width: 120px;
     border: 0;
+    font-size: 16px;
 }
 
 .t-data.price {
     font-family: 'Noto Sans JP', sans-serif;
-    width: 40px;
+    width: 35px;
     border: 0;
+    font-size: 16px;
 }
 
 .t-data.qua {
     font-family: 'Noto Sans JP', sans-serif;
-    width: 35px;
+    width: 25px;
     border: 0;
+    font-size: 16px;
 }
 
 .t-data.dis {
     font-family: 'Noto Sans JP', sans-serif;
-    width: 35px;
+    width: 25px;
     border: 0;
+    font-size: 16px;
 }
 
 .t-data.delete {
@@ -70,6 +82,21 @@ td {
 
 .t-data.cons {
     font-family: 'Noto Sans JP', sans-serif;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    font-size: 16px;
+    text-align: center;
+    width: 48px;
+    color: #000;
+    background-color: #fff;
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
 }
 
 .btn {
@@ -91,4 +118,32 @@ td {
     text-align: center;
     margin: 0;
     margin-top: 30px;
+}
+
+.settings {
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+.settings-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 23px;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.check-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-top: 5px;
+    width: fit-content;
+}
+
+.check {
+    inline-size: 22px;
+    block-size: 22px;
+    margin-left: 5px;
 }

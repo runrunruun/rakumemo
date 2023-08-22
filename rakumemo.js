@@ -5,25 +5,17 @@
     const $table = document.getElementById("table");
     const $calcBtn = document.querySelector("[data-calcBtn]");
     const $calcResult = document.querySelector("[data-calcResult]");
+    const $saveBtn = document.querySelector("[data-saveBtn]");
+    const $loadBtn = document.querySelector("[data-loadBtn]");
     let $deleteBtn = document.querySelectorAll("[data-delete]");
     let $memoInp = document.querySelectorAll("[data-memoInp]");
+    let $mer = document.querySelectorAll("[data-mer]");
     let $price = document.querySelectorAll("[data-price]");
     let $qua = document.querySelectorAll("[data-qua]");
     let $dis = document.querySelectorAll("[data-dis]");
     let $cons = document.querySelectorAll("[data-cons]");
 
-    // データ更新
-    const dataUpDate = () => {
-        $deleteBtn = document.querySelectorAll("[data-delete]");
-        $memoInp = document.querySelectorAll("[data-memoInp]");
-        $price = document.querySelectorAll("[data-price]");
-        $qua = document.querySelectorAll("[data-qua]");
-        $dis = document.querySelectorAll("[data-dis]");
-        $cons = document.querySelectorAll("[data-cons]");
-    };
-
-    // メモ追加
-    $addBtn.addEventListener("click", () => {
+    const addMemo = () => {
         let $lastTr = $table.lastElementChild.lastElementChild;
         const $cloneTr = $lastTr.cloneNode(true);
         $table.lastElementChild.insertBefore($cloneTr, null);
@@ -35,6 +27,28 @@
         $lastTr.querySelector("[data-dis]").value = "";
         $lastTr.querySelector("[data-cons]").value = 
         $lastTr.previousElementSibling.querySelector("[data-cons]").value;
+    };
+
+    const deleteMemo = () => {
+        dataUpDate();
+        $table.lastElementChild.lastElementChild.remove();
+        dataUpDate();
+    };
+
+    // データ更新
+    const dataUpDate = () => {
+        $deleteBtn = document.querySelectorAll("[data-delete]");
+        $memoInp = document.querySelectorAll("[data-memoInp]");
+        $mer = document.querySelectorAll("[data-mer]");
+        $price = document.querySelectorAll("[data-price]");
+        $qua = document.querySelectorAll("[data-qua]");
+        $dis = document.querySelectorAll("[data-dis]");
+        $cons = document.querySelectorAll("[data-cons]");
+    };
+
+    // メモ追加
+    $addBtn.addEventListener("click", () => {
+        addMemo();
     });
 
     // メモ削除
@@ -48,6 +62,7 @@
         }
     });
 
+    // 計算
     $calcBtn.addEventListener("click", () => {
         let mersPrice = [];
         let resultPrice;
@@ -71,5 +86,41 @@
             return x + y;
         })) + "円";
     });
+
+    // ブラウザに保存
+    $saveBtn.addEventListener("click", () => {
+        dataUpDate();
+        let datasArr = [];
+        for (let i = 0; i < $memoInp.length; i++) {
+            datasArr.push({
+                mer: $mer[i].value,
+                price: $price[i].value,
+                qua: $qua[i].value,
+                dis: $dis[i].value,
+                cons: $cons[i].value
+            })
+        }
+        localStorage.setItem("datas", JSON.stringify(datasArr));
+    });
+
+    // ブラウザからロード
+    $loadBtn.addEventListener("click", () => {
+        dataUpDate();
+        let loadValue = JSON.parse(localStorage.getItem("datas"));
+        while (!($memoInp.length === 1)) {
+            deleteMemo();
+        }
+        for (let i = 0; i < loadValue.length - 1; i++) {
+            addMemo();
+        }
+        dataUpDate();
+        for (let i = 0; i < $memoInp.length; i++) {
+            $mer[i].value = loadValue[i].mer
+            $price[i].value = loadValue[i].price
+            $qua[i].value = loadValue[i].qua
+            $dis[i].value = loadValue[i].dis
+            $cons[i].value = loadValue[i].cons
+        }
+    })
 
 })();

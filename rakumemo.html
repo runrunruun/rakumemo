@@ -15,12 +15,15 @@
    <div class="smartphone-size">
 
       <h1 class="header-text">らくらく買い物メモ</h1>
+
+      <p class="comment">※割引は％で入力してください</p>
+
       <table class="table" id="table" border="1">
          <tr>
             <th><p class="t-header">商品名</p></th>
             <th><p class="t-header">値段</p></th>
             <th><p class="t-header">数</p></th>
-            <th><p class="t-header">割引 %</p></th>
+            <th><p class="t-header">割引</p></th>
             <th><p class="t-header">消</p></th>
             <th><p class="t-header">税</p></th>
          </tr>
@@ -46,8 +49,10 @@
          <button class="btn" data-loadBtn="load-btn">ロード</button>
       </div>
 
-      <div class="setting">
-         <label>削除通知<input type="checkbox" class="check" data-deleteCheck="delete-check"></label>
+      <div class="settings">
+         <h2 class="settings-text">設定</h2>
+         <label class="check-text">削除通知<input type="checkbox" class="check" data-deleteCheck="delete-check"></label>
+         <label class="check-text">おつりモード<input type="checkbox" class="check" data-changeCheck="change-check"></label>
       </div>
 
       <h2 class="calc-result" data-calcResult="calc-result">0円</h2>
