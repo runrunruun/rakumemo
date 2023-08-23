@@ -51,11 +51,21 @@
 
       <div class="settings">
          <h2 class="settings-text">設定</h2>
-         <label class="check-text">削除通知<input type="checkbox" class="check" data-deleteCheck="delete-check"></label>
+         <label class="check-text">削除通知<input type="checkbox" class="check" data-deleteCheck="delete-check" checked></label>
          <label class="check-text">おつりモード<input type="checkbox" class="check" data-changeCheck="change-check"></label>
       </div>
 
       <h2 class="calc-result" data-calcResult="calc-result">0円</h2>
+      <div class="change-contents not-display" data-changeContents="change-contents">
+         <h2 class="change-text">おつりモード専用</h2>
+         <p class="comment">計算ボタンを押すとおつりも計算されます。</p>
+         <p class="change-p">支払う料金</p>
+         <input type="number" class="change-inp" data-changeInp="change-inp">
+         <p class="change-p">結果</p>
+         <h2 class="change-calc-result" data-changeCalcResult="change-calc-result">0円</h2>
+      </div>
+
+      <div class="page-margin"></div>
 
    </div>
 

@@ -7,6 +7,11 @@
     const $calcResult = document.querySelector("[data-calcResult]");
     const $saveBtn = document.querySelector("[data-saveBtn]");
     const $loadBtn = document.querySelector("[data-loadBtn]");
+    const $deleteBtnCheck = document.querySelector("[data-deleteCheck]");
+    const $changeContents = document.querySelector("[data-changeContents]");
+    const $changeCheck = document.querySelector("[data-changeCheck]");
+    const $changeInp = document.querySelector("[data-changeInp]");
+    const $changeResult = document.querySelector("[data-changeCalcResult]");
     let $deleteBtn = document.querySelectorAll("[data-delete]");
     let $memoInp = document.querySelectorAll("[data-memoInp]");
     let $mer = document.querySelectorAll("[data-mer]");
@@ -56,9 +61,24 @@
         dataUpDate();
         for (let i = 0; i < $deleteBtn.length; i++) {
             if (e.target === $deleteBtn[i] && !($memoInp.length === 1)) {
-                $memoInp[i].remove();
-                dataUpDate();
+                if ($deleteBtnCheck.checked) {
+                    let deleteCheckFlag = window.confirm("削除してよろしいですか？");
+                    if (deleteCheckFlag) {
+                        $memoInp[i].remove();
+                    }
+                } else {
+                    $memoInp[i].remove();
+                }
             }
+        }
+    });
+
+    // おつりモードON/OFF
+    $changeCheck.addEventListener("click", () => {
+        if ($changeCheck.checked) {
+            $changeContents.style.display = "block";
+        } else {
+            $changeContents.style.display = "none";
         }
     });
 
@@ -66,6 +86,7 @@
     $calcBtn.addEventListener("click", () => {
         let mersPrice = [];
         let resultPrice;
+        let resultSum;
         dataUpDate();
         for (let i = 0; i < $price.length; i++) {
             if (!($price[i].value === "")) {
@@ -82,9 +103,13 @@
                 }
             }
         }
-        $calcResult.textContent = Math.floor(mersPrice.reduce((x, y) => {
+        resultSum = Math.floor(mersPrice.reduce((x, y) => {
             return x + y;
-        })) + "円";
+        }))
+        $calcResult.textContent = resultSum + "円";
+        if ($changeCheck.checked && !($changeInp.value === "")) {
+            $changeResult.textContent = parseInt(resultSum - $changeInp.value) + "円";
+        }
     });
 
     // ブラウザに保存

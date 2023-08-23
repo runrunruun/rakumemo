@@ -4,6 +4,17 @@ body {
     margin: 0;
 }
 
+.page-margin {
+    margin: 0;
+    width: auto;
+    height: 1px;
+    margin-top: 40px;
+}
+
+.not-display {
+    display: none;
+}
+
 .smartphone-size {
     width: 375px;
     height: 100vh;
@@ -146,4 +157,38 @@ input[type="number"]::-webkit-inner-spin-button {
     inline-size: 22px;
     block-size: 22px;
     margin-left: 5px;
+}
+
+.change-contents {
+    text-align: center;
+}
+
+.change-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+.change-inp {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    width: 70px;
+    border: 0;
+    border: #5856d0 dashed 2px;
+    border-radius: 5px;
+}
+
+.change-p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+
+.change-calc-result {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
 }
